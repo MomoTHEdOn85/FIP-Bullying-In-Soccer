@@ -1,0 +1,90 @@
+//Helping or Getting Help Section here
+
+ 
+/* 01. Mobile
+_____________________________________ */
+#Help { 
+   
+  background-color: $RedSecond;
+  padding-bottom: 5em;
+
+  .Hlogo {
+    display: flex;
+    justify-content: center;
+    object { 
+      position: absolute;
+      width: 9em;
+      margin-top: -3.8em;
+    } 
+  }
+
+  h5, p {
+    text-align: center;
+    font-family: $mainFont;
+    color: $WhiteThird;
+    font-size: 1.3em; 
+  }
+
+  h5 {
+    padding-top: 6em; //change the value later
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .Htext {
+    padding: 2.5em 1.5em 3em 1.5em;
+    p { text-align: left; }
+
+    .infoBold {text-align: left;}
+  }
+
+  .Himg {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; 
+  }
+}
+
+ 
+/* 02. Tablet
+_____________________________________ */
+@media screen and (min-width: 48em) and (max-width: 63.98em) {
+  #Help{
+    
+    h5 {
+      padding: 1em;
+      padding-top: 4.5em; 
+      font-size: 2.4em; 
+    }
+    .Htext { padding: 1em 4em 4em 4em; font-size: 1.3em; }
+
+    .Himg {
+      padding: 1em 3em 1em 3em;
+      display: flex;
+      flex-direction: row;
+      gap: 4em; 
+    }
+  } 
+}
+
+
+/* 03. Desktop
+_____________________________________ */
+@media screen and (min-width: 64em) {
+  #Help{
+    
+    h5 {
+      padding: 1em;
+      padding-top: 4.5em; 
+      font-size: 2.7em; 
+    }
+    .Htext { padding: 1em 5em 4em 5em; font-size: 1.3em; }
+
+    .Himg {
+      padding: 1em 13em 1em 13em;
+      display: flex;
+      flex-direction:  row;
+      gap: 4em; 
+    }
+  }
+
+}

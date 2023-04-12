@@ -1,0 +1,966 @@
+/* _____________________________________
+
+          Main Site SCSS
+   _____________________________________ */
+/* 01. General Styles
+   02. Logo                        
+   03. CSS Grid
+   04. Mobile
+   05. Tablet
+   06. Desktop
+
+
+
+/* 01. General Styles
+ _____________________________________ */
+
+ html{scroll-behavior: smooth;}
+
+  main { background-color: white;}
+
+  .hidden {display: none;}
+
+  .infoBold {font-weight: bold;} 
+
+  img { display: block; width: 100%;}
+
+  .center{ margin-left: auto; margin-right: auto;}
+ 
+ /*------------ Floats ------------*/
+
+  .f-left {
+    float: left;
+  }
+
+  .f-right {
+    float: right;
+  }
+
+
+   
+
+  /*
+
+   02. Logo + Navigation bar
+   _____________________________________ */
+   /*----Mobile-----*/
+  .head {
+     
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+    //background-color: $BlackForth;  
+    //position: relative;
+
+    .nav {
+      height: 8em;
+      width: 100%;
+      background-color: $BlackForth;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      //padding-bottom: 2em;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      width: auto;
+      margin: 0;
+
+      object {
+        margin-left: 20px;
+        padding: 1em 1em; 
+        width: 5em;
+        height: 5em;
+      }
+    }
+
+    .nav-list {
+      position: fixed;
+      width: 100%;
+      height: 0vh;
+      top: 8em;
+      background-color: $BlackForth;
+      float: right;
+      text-align: center;
+      transition: all .5s;
+     // box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-list li {
+      display: none;
+      line-height: 4em;
+      margin: 30px 0;
+      transition: all .5s;
+
+      a {
+        font-family: $mainFont;
+        text-decoration: none;
+        color: $YellowMain;
+        font-size: 1.8em;
+        padding: 0.5em 0.5em;
+        font-weight: 700;
+      }
+    }
+
+    
+   
+    .nav-list li a:hover {
+      background: $YellowMain;
+      color: $RedSecond;
+      transition: 1s;
+    }
+
+    .hamburger-btn {
+      display: block;
+      margin-right: 40px;  
+      color: $YellowMain;
+      float: right;
+    
+      cursor: pointer;
+
+      .barr {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: $YellowMain;
+      }
+    }
+  
+    #check {display: none;}
+
+    #check:checked ~ .nav-list {height: 50vh;}
+
+    #check:checked ~ .nav-list li {display: block;}
+ 
+     
+    
+  }
+
+   
+   /*------Tablet ------- */
+   @media screen and (min-width: 48em) and (max-width: 63.98em) {
+    .head {
+      .logo {
+      
+        object {
+          margin-left: 20px;
+          padding: 2em 2em; 
+          width: 6em;
+          height: 6em;
+        }
+      }
+      .hamburger-btn {display: none;}
+
+      .nav {overflow-y: hidden;}
+
+      .nav-list {
+        
+        position: relative;
+        height: 150px;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 25px;
+        transition: none;
+        overflow-y: hidden;
+      }
+
+      .nav-list li {
+        display: inline-block;
+        opacity: 1;
+        line-height: 180px;
+        margin: 0 28px;
+        transition: none;
+        overflow-y: hidden;
+
+        a { font-size: 1.2em;}
+      }
+      
+   }
+  }
+
+   /*------Desktop ------- */
+
+   @media screen and (min-width: 64em) {
+    .head {
+      padding: 0;
+      .logo {
+      
+        object {
+          margin-left: 20px;
+          padding: 2em 2em; 
+          width: 8em;
+          height: 8em;
+        }
+      }
+      .hamburger-btn {display: none;}
+
+      .nav {
+        overflow-y: hidden;
+        height: auto;
+      }
+
+      .nav-list {
+        
+        position: relative;
+        height: 150px;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 25px;
+        transition: none;
+        overflow-y: hidden;
+      }
+
+      .nav-list li {
+        display: inline-block;
+        opacity: 1;
+        line-height: 180px;
+        margin: 0 28px;
+        transition: none;
+        overflow-y: hidden;
+
+        a { font-size: 1.5em;}
+        
+      }
+    }
+   }
+
+
+
+  /* 04. CSS Grid
+   _____________________________________ */
+
+  @supports (grid-area:auto) {
+
+    .main > *, .foot {
+      //display: grid;
+      grid-template-columns: 1fr repeat(2, minmax(auto, 24em)) 1fr;
+    }
+  
+    .fluid {
+      display: grid;
+      grid-column: 1 / span 4;
+      grid-template-columns: 1fr;
+    }
+  
+    .one-item {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: 1fr;
+    }
+  
+    .two-items {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: repeat(2, 1fr); /*2 in repeat means , you are gonna be 2 and 1 fr would divide it by 50 50 percent*/
+      justify-content: space-evenly;
+      row-gap: 2em;
+      column-gap: 2em;
+    }
+  
+    .three-items {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: repeat(2, 1fr); /*3 in repeat means , you are gonna be 3 and 1 fr would divide it by half percent*/
+      justify-content: space-evenly;
+      row-gap: 2em;
+      column-gap: 2em;
+    }
+  
+    .four-items {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: repeat(4, 1fr); /*3 in repeat means , you are gonna be 3 and 1 fr would divide it by half percent*/
+      justify-content: space-evenly;
+      row-gap: 2em;
+      column-gap: 2em;
+    }
+  
+    .off-set-third {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: .3fr, .7fr; /**/
+      row-gap: 2em;
+      column-gap: 2em;
+    }
+  
+    
+    .third-off-set {
+      display: grid;
+      grid-column: 2 / span 2;
+      grid-template-columns: .7fr, .3fr; /**/
+      row-gap: 2em;
+      column-gap: 2em;
+    }
+  
+    @media screen and (max-width: 47.9375em) {
+      .s-one-item {
+        display: grid;
+        grid-column: 2 / span 2;
+        grid-template-columns: 1fr !important;
+      }
+    }
+  
+    @media screen and (min-width: 48em) and (max-width: 63.98em) {
+      .four-items {
+        grid-template-columns: repeat(2, 1fr) !important;
+  
+      }
+      
+    }
+  
+    /* 04. Mobile
+    _____________________________________ */
+  
+    $color_1: rgba(0, 0, 0, 0.6);
+  
+    /*---- HERO ----*/
+    .site { max-width: 47.9375em; }
+    .full {display: none;}
+    .tablet {display: grid;}
+    .mobile {display: grid;}
+    .hero {margin: 0 0;}
+
+  
+    /*---- HERO IMAGE ----*/
+    /* Slideshow container */
+    .HeroContainer {
+      
+      //max-width: 1000px;
+      
+      margin: auto;}
+      
+      /* Hide the images by default */
+      .mySlides { 
+        display: none;}
+      
+      /* Next & previous buttons */
+      .prev, .next {
+        cursor: pointer;
+        //position: absolute;
+       
+      }
+      
+      
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+      
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        margin-top: -4em;
+      }
+      
+      .active, .dot:hover {
+        background-color: $RedSecond;}
+        
+        /* Fading animation */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+
+     /*---- Main Start Icon ----*/
+     #mainStartIcon {
+      
+      display: flex;
+      justify-content: center;
+      .Eball {
+        padding: 1em 0em 1em 0em;
+        width: 6em;
+      }
+     }
+    
+     
+
+    /*---- Subscription ----*/
+    #Subscription {
+      padding: 1em;
+      margin: auto;
+       
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+       
+      #app {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .CMS{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+
+        thead {
+          tr {
+            background-color: $BlackForth;
+            color: $YellowMain;
+            text-align: center;
+          }
+        }
+        tbody {
+          line-height: 3em;
+          tr{ 
+            background-color: #f76a6a;
+            button{
+              font-size: 0.8em;
+              background-color: $YellowMain;
+              font-weight: 600;
+              cursor: pointer;
+              transition: .2s ease-in-out 0s;
+              &:hover {
+                transform: scale(1.25);
+  
+              }
+            }
+            
+            .edit {
+              color: $BlackForth;
+            }
+            .del{
+              background-color: $BlackForth;
+              color: $RedSecond;
+            }
+             
+          }
+        }
+        button{font-size: 0.9em; padding: 0.5em;}
+      }
+
+      .message-alert{
+        font-size: 1em;
+        text-align: center;
+        color: $YellowMain;
+        padding: 1em;
+        font-weight: 600;
+      }
+
+      .store-table{
+        line-height: 2.3em;
+        font-size: 1.2em;
+
+        tbody, thead{ display: inline-block;}
+        th,  td { 
+          display: block;
+          button{font-size: 0.9em; padding: 0.5em; width: 100%;}
+          text-align: center; 
+        }
+
+        td {
+          input{
+            width: 20em;
+            height: auto;
+          }
+        }
+      }
+       
+       
+      .lightbox-window {
+        position: fixed;
+        background-color: rgba(50, 50, 50, 0.95);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        &:target {
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+        }
+        & > form {
+          width: 400px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 1em;
+          background: rgb(187, 27, 27);
+        }
+
+        form{ 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2em;
+          &::placeholder {
+            color: #bbb;
+          }
+
+          .wrapper {
+            width: auto;
+            overflow-y: hidden;
+            button{
+              width: 100%;
+              display: block;
+              margin-top: 2em;
+              padding: 1em;
+              background-color: $YellowMain;
+              cursor: pointer;
+              font-size: 1.2em;
+              color: rgb(0, 0, 0);
+              text-align: center;
+              font-weight: lighter;
+              transition: .2s ease-in-out 0s;
+              &:hover { 
+                transform: scale(1.25);
+                background-color: $RedSecond;
+                
+              }
+            }
+          }
+        }
+
+        video {width: 100%}
+      }
+
+      .lb-close {
+        color: $YellowMain;
+        background-color: $BlackForth;
+        line-height: 100px;
+        font-size: 1em;
+        position: absolute;
+        right: 10px;
+        text-align: center;
+        top: 0;
+        width: 80px;
+        text-decoration: none;
+        &:hover {
+          color: rgb(255, 255, 255);
+        }
+      }
+
+      #success { display: none;}
+      
+      background-color: $RedSecond;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      color: $WhiteThird;
+      font-family: $mainFont;
+
+      h4, p {
+        text-align: center;
+        font-family: $mainFont;
+        color: $YellowMain;
+        font-size: 1.2em;
+      }
+      h4{font-size: 1.5em;}
+
+      .form {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+
+      label {color: $WhiteThird;}
+
+      .btn {
+        text-decoration: none;
+        display: block;
+        margin-top: 2em;
+        padding: 1em;
+        background-color: $YellowMain;
+        cursor: pointer;
+        font-size: 1.2em;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-weight: lighter;
+        &:hover { background-color: $YellowMain}
+
+      }
+     
+    }
+    
+  
+    /* 05. Tablet
+    _____________________________________ */
+  
+    @media screen and (min-width: 48em) and (max-width: 63.98em) {
+      .head {
+        //display: grid;
+        //grid-template-columns: 1fr repeat(2, minmax(auto, 31.99em)) 1fr;
+      }
+      .foot {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 31.99em)) 1fr;
+      }
+    
+      .site {max-width: none;}
+    
+      .full {display: none;}
+    
+      .tablet {display: grid;}
+    
+      .mobile {display: grid;}
+
+    
+       /*---- HERO IMAGE ----*/
+      .hero-img {
+        grid-column: span 4;
+    
+        h2 {
+          font-size: 1.5em;
+        }
+      }
+       /*---- Subscription ----*/
+       
+       #Subscription {
+        overflow: hidden;
+        position: relative;
+        padding: 1em;
+        text-align: center;
+
+        #app{ align-items: center;}
+
+        .CMS{
+          thead {
+            tr {
+              background-color: $BlackForth;
+              color: $YellowMain;
+              text-align: center;
+              th{padding: 1em;}
+             
+            }
+          }
+          tbody {
+            line-height: 3em;
+            tr{ background-color: #f76a6a;}
+            td {padding: 1em;
+              button{font-size: 1em; padding: 0.5em;}
+            }
+          }
+        }
+
+        .store-table{
+          line-height: 2em;
+          td {
+            input{
+              width: 20em;
+              height: auto;
+            }
+          }
+        }
+       
+        
+        h4{font-size: 1.5em;} 
+         
+      }
+     
+    }
+
+    
+  
+    /* 06. Desktop
+    _____________________________________ */
+     
+    @media screen and (min-width: 64em) {
+      .head {
+        //display: grid;
+        //grid-template-columns: 1fr repeat(2, minmax(auto, 50em)) 1fr;
+      }
+      
+      .foot {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 50em)) 1fr;
+      }
+      .site {
+        max-width: none;
+      }
+      .full {
+        display: grid;
+        margin-left: 75em;
+        
+    
+      }
+      .tablet {
+        display: none;
+      }
+      .mobile {
+        display: none;
+      }
+  
+      .hero-img {
+        grid-column: span 4;
+        h2 { 
+          font-size: 2em;
+        }
+        h2.left {
+          margin-left: 6.5%;
+        }
+        h2.right {
+          margin-left: 6.5%;
+        }
+      }
+
+     
+      /*---- Subscription ----*/
+      #Subscription {
+        overflow: hidden;
+        position: relative;
+        padding: 1em;
+
+        #app{
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .CMS{
+          font-size: 1.6em;
+          thead {
+            tr {
+              background-color: $BlackForth;
+              color: $YellowMain;
+              text-align: center;
+              th{padding: 1em;}
+             
+            }
+          }
+          tbody {
+            line-height: 3em;
+            tr{ background-color: #f76a6a;}
+            td {padding: 1em;
+              button{font-size: 1em; padding: 0.5em;}
+            }
+          }
+        }
+
+        .store-table{
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 2em;
+          td {
+            input{
+              width: 20em;
+              height: auto;
+            }
+          }
+        }
+
+        
+        label {
+          font-size: 1.5em;
+        }
+       
+        h4, p {
+          text-align: center;
+          font-family: $mainFont;
+          color: $YellowMain;
+          font-size: 1.8em;
+        }
+        h4{font-size: 3em;} 
+         
+      }
+       
+     
+    }
+     
+    
+
+
+  }
+
+  /* 07. Footer
+  _____________________________________ */
+
+     /*------Mobile ------- */
+     body {
+      overflow-x: hidden; 
+      overflow-y: auto;
+      padding: 0.5rem;
+      scroll-behavior: smooth;
+    }
+
+     footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .happyHelp {
+        font-weight: 800;
+       
+      }
+
+      h4{
+        font-family: $mainFont;
+        font-size: 2em;
+        color: $BlackForth;
+        padding: 1em;
+      }
+      p {
+        font-family: $mainFont;
+        font-size: 1.4em;
+        color: $BlackForth;
+        font-weight: bold;
+        padding: 0em 2em 0em 2em;
+      } 
+
+      .topBtn { 
+        scroll-behavior: smooth;
+   
+        .img {
+          display: flex;
+          justify-content: center;
+          object {
+            width: 4.5em;
+           }
+        }
+         
+        p {
+          text-align: center;
+        }
+      }
+    }
+    
+    .copyRight {
+      font-family : $mainFont;
+      padding: 0.938rem;
+      background-color: $BlackForth;  
+      width: 100%;
+
+      p{text-align: center;
+        color: $WhiteThird;}
+    }
+
+     /*------Tablet ------- */
+
+    @media screen and (min-width: 48em) and (max-width: 63.98em) {
+      body {
+        overflow-x: hidden; 
+        overflow-y: auto;
+        padding: 0.5rem;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        p {
+          font-family: $mainFont;
+          font-size: 1.4em;
+          color: $BlackForth;
+          font-weight: bold;
+          padding: 0em 7em 0em 7em;
+        } 
+
+        .copyRight {
+          font-family : $mainFont;
+          padding: 0.938rem;
+          background-color: $BlackForth;  
+          width: 100%;
+    
+          p{text-align: center;
+            color: $WhiteThird;}
+        }
+
+        .topBtn { 
+          .img {
+            display: flex;
+            justify-content: center;
+            object {
+              width: 4.5em;
+             }
+          }
+           
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  
+
+     /*------Desktop ------- */
+
+     @media screen and (min-width: 64em) {
+
+      #Footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   
+
+        p {
+          font-family: $mainFont;
+          font-size: 2em;
+          color: $BlackForth;
+          font-weight: bold;
+          padding: 0em 1em 0em 1em;
+        } 
+        .copyRight {
+          font-family : $mainFont;
+          padding: 0.938rem;
+          background-color: $BlackForth;  
+          width: 100%;
+    
+          p{font-size: 1.5em;
+            font-weight: 300;
+            text-align: center;
+            color: $WhiteThird;}
+        }
+      }
+
+     
+      
+   
+
+     }

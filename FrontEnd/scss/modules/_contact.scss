@@ -1,0 +1,230 @@
+//Contact Area
+ 
+/* 01. Mobile
+    _____________________________________ */
+
+    
+.topCtext {
+ text-align: center; 
+}
+
+.contactAd  {
+  p {text-align: center;}
+}
+    
+//Icons
+.socialIcons {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 1em; 
+
+  img { 
+    object-fit: contain;
+    margin: 0.8em;
+  }
+}
+
+//App Link
+.AppLink {
+  margin: 0;
+  overflow: hidden;
+  padding: 0em 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    margin: 4px;
+  }
+
+  a:hover { 
+    cursor: pointer;
+  }
+
+  img {
+    align-content: center;
+    margin: 0;
+  }
+}
+
+
+
+//Contact Form
+.form {
+  overflow: hidden;
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+  form {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    
+  }
+}
+
+label {
+  display: block;
+  margin: 1.5em 0 0.3em;
+  padding-left: 0.4em;
+  font-family: $mainFont;
+  color: $BlackForth;
+  font-size: 1.2em;
+
+}
+ 
+ 
+
+input[type=text], input[type=email], input[type=tel], textarea {
+  border: 0.5px solid black;
+  padding: 0.6em;
+  color: #333; 
+  object-fit: contain;
+  width: 20em;
+  height: 2em; 
+}
+
+input[type=submit] {
+  display: block;
+  margin-top: 2em;
+  padding: 0.75rem 3.3rem 0.75rem 0.75rem;
+  background-color: $RedSecond;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+
+  &:hover { background-color: $YellowMain}
+}
+
+
+.wrapper {
+  position: relative;
+
+  i { 
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 60px;
+      font-size: 1.5em;
+  }
+}
+
+textarea { resize: none; display: block; }
+
+
+/* 02. Tablet
+    _____________________________________ */
+@media screen and (min-width: 48em) and (max-width: 63.98em) {
+  
+.AppLink {
+  margin: 0;
+  overflow: hidden;
+  padding: 0em 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    margin: 4px;
+  }
+
+  a:hover { 
+    cursor: pointer;
+  }
+
+  img {
+    align-content: center;
+    margin: 0;
+  }
+}
+  .socialIcons {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 1em 15em 1em 15em; 
+  
+    img { 
+      object-fit: contain;
+      margin: 0.8em;
+    }
+  }
+
+   textarea {
+    padding: 0.6em;
+    color: #333; 
+    object-fit: contain;
+    width: 40em;
+    height: 10em; 
+  } 
+}
+
+
+/* 03. Desktop
+    _____________________________________ */
+@media screen and (min-width: 64em) {
+  //App Link
+.AppLink {
+  margin: 0;
+  overflow: hidden;
+  padding: 0em 20em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    margin: 1px;
+  }
+
+  a:hover { 
+    cursor: pointer;
+  }
+
+  img {
+     
+    align-content: center;
+    margin: 0;
+  }
+}
+  
+   
+       
+  .contactAd {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+
+    .socialIcons {
+      overflow: hidden;
+      display: flex;
+      flex-direction: row; 
+      align-items: center;
+      padding: 0em 20em; 
+        
+      img { 
+        align-items: baseline; 
+        object-fit: contain;
+        margin: 1em;
+      }
+    }
+
+    .links {  
+      margin: 0;
+      width: 50%;
+ 
+      padding: 1em 4em 1em 4em;
+    } 
+    .form{
+      padding: 1em 2em 1em 6em; 
+       textarea {
+        padding: 0.6em;
+        color: #333; 
+        object-fit: contain;
+        width: 50em;
+        height: 15em; 
+      } 
+    }
+  }
+ 
+}

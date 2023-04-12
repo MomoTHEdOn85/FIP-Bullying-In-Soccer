@@ -1,0 +1,208 @@
+//Events Section here
+
+/* 01. Mobile
+_____________________________________ */
+
+#Events {
+    .EventIcon {
+      
+        display: flex;
+        justify-content: center;
+        object {
+            position: absolute;
+            margin-top: -4em;
+            padding: 1em 0em 1em 0em;
+            width: 4em;
+        }
+       }
+  
+    .Ehead{
+        padding-top: 1em;
+        text-align: center;
+        font-family: $mainFont;
+        color: $RedSecond;
+        font-size: 2em;
+        font-weight: bold;
+    } 
+//Upper Grid Area
+    .upperGrid {
+        padding: 2em;
+        background-color: $WhiteThird;
+
+        .Elogo {
+            display: flex;
+            justify-content: center;
+            object {
+                width: 8em;
+            } 
+        }
+
+        .Etext {
+            padding: 2em 1em 1em 1em;
+            text-align: left;
+            font-family: $mainFont;
+            color: $BlackForth;
+            font-size: 1.2em;
+            font-weight: normal;
+            line-height: 1.4em; 
+
+            h5 {
+                font-size: 1em;
+                padding: 1.3em 0.2em 2.5em 0.2em
+            }
+        }   
+    } 
+//Lower Grid Area
+    .lowerFGrid {
+         
+        background-color: $WhiteThird;
+        .eventGift {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 1em;
+           
+        }
+    }   
+}
+
+
+
+
+/* 02. Tablet
+_____________________________________ */
+    @media screen and (min-width: 48em) and (max-width: 63.98em) {
+        #Events{
+            .EventIcon {
+      
+                display: flex;
+                justify-content: center;
+                object {
+                    position: absolute;
+                    margin-top: -4em;
+                    padding: 1em 0em 1em 0em;
+                    width: 5em;
+                }
+               }
+          
+            //Upper Grid Area
+            .upperGrid {
+                display: grid;
+                grid-column: 2 / span 2;
+                grid-template-columns: repeat(2, 1fr); /*2 in repeat means , you a
+                gonna be 2 and 1 fr would divide it by 50 50 percent*/
+                justify-content: space-evenly;
+                row-gap: 2em;
+                column-gap: 2em; 
+
+                .Elogo {
+                    display: flex;
+                    justify-content: center;
+                    object { width: 10em; margin: auto; }  
+                }
+                
+                .Etext {
+                    padding: 2em 1em 1em 1em;
+                    text-align: left;
+                    font-family: $mainFont;
+                    color: $BlackForth;
+                    font-size: 1.3em;
+                    font-weight: 545;
+                    line-height: 1.4em; 
+                }   
+            } 
+
+            //Lower Grid 
+            .lowerFGrid {
+                padding: 2em 4em 2.2em 4em;
+                display: grid;
+                grid-column: 2 / span 2;
+                grid-template-columns: repeat(2, 1fr); /*3 in repeat means , you are gonna 
+                3 and 1 fr would divide it by half percent*/
+                justify-content: space-evenly;
+                row-gap: 2em;
+                column-gap: 2em;
+
+                .eventGift{
+                    display: flex;
+                    flex-direction: row;
+                    img{
+                        width: auto;
+                        height: auto;
+                    }
+                }
+                
+            }
+        } 
+    }
+
+    
+
+/* 03. Desktop
+_____________________________________ */
+@media screen and (min-width: 64em) {
+    #Events{
+        .EventIcon {
+      
+            display: flex;
+            justify-content: center;
+            object {
+                position: absolute;
+                margin-top: -5em;
+                padding: 1em 0em 1em 0em;
+                width: 7em;
+            }
+        }
+
+        .Ehead {
+            padding-top: 1.3em;
+            font-size: 3em;
+        }
+
+      
+        //Upper Grid Area
+        .upperGrid {
+            padding: 3em;
+            padding-bottom: 5em;
+            display: grid;
+            grid-column: 2 / span 2;
+            grid-template-columns: repeat(2, 1fr); /*2 in repeat means , you a
+            gonna be 2 and 1 fr would divide it by 50 50 percent*/
+            justify-content: space-evenly;
+            row-gap: 2em;
+            column-gap: 2em; 
+            justify-content: space-evenly;
+
+            .Elogo {
+                display: flex;
+                justify-content: center;
+                object {
+                    width: 15em;
+                    height: auto;
+                    margin: auto;
+                }  
+            }
+            
+            .Etext { font-size: 1.5em;  }   
+        } 
+
+        //Lower Grid 
+        .lowerFGrid {
+            padding: 3em 6em 5em 6em;
+            display: grid;
+            grid-column: 2 / span 2;
+            grid-template-columns: repeat(2, 1fr); /*3 in repeat means , you are gonna 
+            3 and 1 fr would divide it by half percent*/
+            justify-content: space-evenly;
+            row-gap: 2em;
+            column-gap: 2em;
+
+            .eventGift{
+                padding: 0em;
+                display: flex;
+                flex-direction: row;
+                img{ width: auto; height: auto;  }
+            }  
+        }
+    }
+}
