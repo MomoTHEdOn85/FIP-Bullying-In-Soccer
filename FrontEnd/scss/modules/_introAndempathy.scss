@@ -1,0 +1,96 @@
+//Intro to Bullying and EMpathy Sections here (Black box Text)
+
+ 
+ 
+/* 01. Mobile
+_____________________________________ */
+
+/*-----------What is Bullying?-------------*/
+#Info{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;  
+}
+.infoText {
+  padding: 2em;
+  padding-bottom: 7em;
+  background-color: $BlackForth;
+  h5, p { 
+    font-family: $mainFont;
+    color: $WhiteThird;
+    font-size: 1.5em;
+  }
+  h5{
+    color: $YellowMain;
+    padding: 1.3em 0.2em 2.5em 0.2em ;
+    font-size: 1.8em;} 
+}
+ 
+
+
+/*-----------Empathy-------------*/
+#Empathy{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;  
+}
+
+
+
+
+
+
+/* 02. Tablet
+_____________________________________ */
+@media screen and (min-width: 48em) and (max-width: 63.98em) {
+
+  /*-----------What is Bullying?-------------*/
+  .infoText{ padding: 3em 5em; } 
+  
+
+  /*-----------Empathy-------------*/
+}
+
+
+
+/* 03. Desktop
+_____________________________________ */
+@media screen and (min-width: 64em) {
+
+  /*-----------What is Bullying?-------------*/
+  #Info {
+    display: grid;
+    grid-column: 2 / span 2;
+    grid-template-columns: repeat(2, 1fr); /*2 in repeat means , you are gonna be 2 and 1 fr would divide it by 50 50 percent*/
+    justify-content: space-evenly;
+    row-gap: 2em;
+    column-gap: 2em;
+    align-items: center;
+    justify-items: center;
+    padding: 1em 3em; 
+  }
+
+  .infoText{ padding: 6em 4em 8em 4em; }  
+
+  .infoImg {
+    //object-fit: fill;
+    width: auto; }   
+    
+
+  /*-----------Empathy-------------*/
+
+  #Empathy {
+    display: grid;
+    grid-column: 2 / span 2;
+    grid-template-columns: repeat(2, 1fr); /*2 in repeat means , you are gonna be 2 and 1 fr would divide it by 50 50 percent*/
+    justify-content: space-evenly;
+    row-gap: 2em;
+    column-gap: 2em;
+    align-items: center;
+    justify-items: center;
+    padding: 1em 5em;
+
+  }
+}
+
+

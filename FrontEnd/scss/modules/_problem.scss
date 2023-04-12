@@ -1,0 +1,143 @@
+//Problem or Video Section here
+
+ 
+/* 01. Mobile
+_____________________________________ */
+#Problem {
+  display: flex;
+  flex-direction: column-reverse;
+  //background-color: $WhiteThird;
+  padding: 0.3em;
+
+  .pText {
+    background-color: $YellowMain;
+    padding: 1em 1.3em 0em 1.3em;
+    padding-bottom: 2em;
+  
+    
+    h5, p { 
+      font-family: $mainFont;
+      color: $BlackForth;
+      font-size: 1.3em;
+    }
+    
+    h5{
+      padding: 1.3em 0.2em 2.5em 0.2em ;
+      font-size: 1.5em;} 
+  }
+
+  .pVideo {
+   
+    display: flex;
+    justify-content: center;
+     
+    video {
+      width: 100%; //might need to chnage
+       
+    }
+  }  
+  
+}
+
+
+
+
+
+
+
+
+
+/* 02. Tablet
+_____________________________________ */
+@media screen and (min-width: 48em) and (max-width: 63.98em) {
+  #Problem {
+    display: flex;
+    flex-direction: column;
+    //background-color: $WhiteThird;
+    padding: 2em;
+  
+    .pText {
+      background-color: $YellowMain;
+      padding: 6em;
+      padding-bottom: 2em;
+    
+      
+      p { 
+        font-size: 1.5em;
+      }
+      
+      h5{
+        padding: 1.3em 0.2em 2.5em 0.2em ;
+        font-size: 2em;} 
+    }
+  
+    .pVideo {
+      background-color: $YellowMain;
+      padding-top: 2em;
+      padding: 1.5em;
+      display: flex;
+      justify-content: center;
+       
+      video {
+        width: 100%; //might need to chnage 
+      }
+    }
+    
+   
+  
+  
+    
+  }
+
+}
+
+
+/* 03. Desktop
+_____________________________________ */
+@media screen and (min-width: 64em) {
+  #Problem {
+    display: flex;
+    flex-direction: column;
+    //background-color: $WhiteThird;
+    padding: 2em 3em 2em 3em;
+  
+    .pText {
+      background-color: $YellowMain;
+      padding: 6em;
+      padding-bottom: 3em;
+    
+      
+      h5, p { 
+        font-family: $mainFont;
+        color: $BlackForth;
+        font-size: 1.5em;
+      }
+      
+      h5{
+        padding: 1.3em 0.2em 2.5em 0.2em ;
+        font-size: 2em;} 
+    }
+  
+    .pVideo {
+      background-color: $YellowMain;
+      padding-top: 2em;
+      padding: 1.5em;
+      display: flex;
+      justify-content: center;
+       
+      video {
+        width: 100%; //might need to chnage
+         
+  
+      }
+    }
+    
+   
+  
+  
+    
+  }
+  
+
+}
+
